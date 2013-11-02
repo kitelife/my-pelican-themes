@@ -40,7 +40,6 @@
 
         <script src="{{ SITEURL }}/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
-
           {% if GOOGLE_ANALYTICS_ID %}
               <script>
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -54,9 +53,10 @@
               </script>
           {% endif %}
 
-
-
-
+          {% if TENCENT_ANALYTICS_ID %}
+              <script type="text/javascript" src="http://tajs.qq.com/stats?sId={{ TENCENT_ANALYTICS_ID }}" charset="UTF-8"></script>
+          {% endif %}
+          
         {% endblock head %}
 </head>
 
