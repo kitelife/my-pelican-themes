@@ -157,16 +157,11 @@
   <script src="{{ SITEURL }}/theme/js/libs/gumby.min.js"></script>
   <script src="{{ SITEURL }}/theme/js/plugins.js"></script>
   <script src="{{ SITEURL }}/theme/js/main.js"></script>
-  <link rel="stylesheet" href="{{ SITEURL }}/theme/emojify.min.css" type="text/css" />
-  <script src="{{ SITEURL }}/theme/js/emojify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/emoji/css/basic/emojify.min.css" />
+  <script src="{{ SITEURL }}/theme/emoji/js/emojify.min.js"></script>
   <script>
     emojify.setConfig({
-        emoticons_enabled: true,
-        people_enabled: true,
-        nature_enabled: true,
-        objects_enabled: true,
-        places_enabled: true,
-        symbols_enabled: true
+        img_dir : '{{ SITEURL }}/theme/emoji/images/basic'
     });
     emojify.run();
 </script>
