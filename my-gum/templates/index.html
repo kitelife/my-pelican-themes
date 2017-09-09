@@ -4,7 +4,7 @@
 {% block content_title %}
 {% endblock %}
 <div class="row">
-    <div class="eleven columns">
+    <div class="columns">
         <ol id="post-list">
             {% for article in articles_page.object_list %}
             <li>
@@ -33,7 +33,6 @@
             {% endfor %}
         </ol><!-- /#posts-list -->
     </div><!-- /.eleven.columns -->
-    {% include 'sidebar.html' %}
  </div><!-- /.row -->
 {% include 'pagination.html' %}
 </section><!-- /#content -->
