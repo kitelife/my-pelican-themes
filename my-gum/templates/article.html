@@ -23,9 +23,23 @@
             <div class="entry-content">
               {{ article.content }}
             </div><!-- /.entry-content -->
-            {% if DISQUS_SITENAME %}
             <div class="comments">
-              <h3>欢迎评论</h3>
+              {% if GITALK_CLIENT_ID and GITALK_CLIENT_SECRET %}
+              <div id="gitalk-container"></div>
+              <script type="text/javascript">
+                const gitalk = new Gitalk({
+                  clientID: '{{ GITALK_CLIENT_ID }}',
+                  clientSecret: '{{ GITALK_CLIENT_SECRET }}',
+                  repo: '{{ GITALK_REPO }}',
+                  owner: '{{ GITALK_OWNER }}',
+                  admin: ['{{ GITALK_OWNER }}'],
+                  id: location.pathname,      // Ensure uniqueness and length less than 50
+                  distractionFreeMode: false  // Facebook-like distraction free mode
+                });
+                gitalk.render('gitalk-container');
+              </script>
+              {% endif %}
+              {% if DISQUS_SITENAME %}
               <div id="disqus_thread"></div>
               <script type="text/javascript">
                 var disqus_identifier = "{{ article.url }}";
@@ -35,8 +49,8 @@
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                 })();
               </script>
+              {% endif %}
             </div>
-            {% endif %}
         </div><!-- /.twelve.columns -->
  </div><!-- /.row -->
 </section>

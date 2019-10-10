@@ -58,6 +58,10 @@
         {% if page and page.latex %}
             {{ page.latex }}
         {% endif %}
+        {% if GITALK_CLIENT_ID and GITALK_CLIENT_SECRET %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+        <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+        {% endif %}
         {% endblock head %}
 </head>
 
