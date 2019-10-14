@@ -243,3 +243,7 @@ h2 {
     list-style: disc;
     margin-left: 1.3em;
 }
+
+.tag-row > .label {
+  line-height: 22px;
+}
