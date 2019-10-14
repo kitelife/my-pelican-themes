@@ -22,7 +22,7 @@
                 <div class="medium primary btn"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">阅读全文</a></div>
                 <div class="row tag-row">
                     {% if article.tags %}
-                    <span>Tagged as : </span>
+                    <span>标签: </span>
                     {% for tag in article.tags %}
                     <a class="danger label" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
                     {% endfor %}
